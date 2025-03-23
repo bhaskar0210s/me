@@ -3,44 +3,620 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Personal Website</title>
+    <title>Bhaskar S | ML Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header>
-      <h1>Welcome to My Personal Website</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  <body class="bg-slate-900 text-gray-200 min-h-screen">
+    <div id="app" class="relative">
+      <!-- Background gradient div - replacement for particle canvas -->
+      <div
+        class="fixed top-0 left-0 w-full h-full -z-10 bg-gradient-to-br from-slate-900 via-blue-900/30 to-slate-900 animate-gradient"
+      ></div>
+
+      <!-- Navigation -->
+      <nav class="sticky top-0 bg-slate-800/80 backdrop-blur-md z-50 shadow-lg">
+        <div
+          class="container mx-auto px-4 py-3 flex justify-between items-center"
+        >
+          <a
+            href="#"
+            class="flex items-center justify-center w-10 h-10 bg-blue-500/20 rounded-full group text-blue-400 transition-all duration-300 hover:bg-blue-500/40 hover:scale-110"
+          >
+            <div class="relative flex items-center justify-center">
+              <div
+                class="absolute w-8 h-8 border-2 border-blue-400/50 rounded-full animate-ping opacity-30"
+              ></div>
+              <div
+                class="absolute w-8 h-8 border border-blue-400/70 rounded-full animate-pulse"
+              ></div>
+              <i class="fas fa-microchip text-xl group-hover:text-blue-300"></i>
+            </div>
+          </a>
+          <div class="hidden md:flex space-x-8">
+            <a href="#about" class="hover:text-blue-400 transition-colors"
+              >About</a
+            >
+            <a href="#skills" class="hover:text-blue-400 transition-colors"
+              >Skills</a
+            >
+            <a href="#projects" class="hover:text-blue-400 transition-colors"
+              >Projects</a
+            >
+            <a href="#experience" class="hover:text-blue-400 transition-colors"
+              >Experience</a
+            >
+            <a href="#contact" class="hover:text-blue-400 transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button
+            @click="toggleMobileMenu"
+            class="md:hidden text-white focus:outline-none"
+          >
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+        <!-- Mobile menu -->
+        <div v-show="mobileMenuOpen" class="md:hidden bg-slate-800 shadow-lg">
+          <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+            <a
+              href="#about"
+              @click="closeMobileMenu"
+              class="hover:text-blue-400 transition-colors py-2"
+              >About</a
+            >
+            <a
+              href="#skills"
+              @click="closeMobileMenu"
+              class="hover:text-blue-400 transition-colors py-2"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              @click="closeMobileMenu"
+              class="hover:text-blue-400 transition-colors py-2"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              @click="closeMobileMenu"
+              class="hover:text-blue-400 transition-colors py-2"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              @click="closeMobileMenu"
+              class="hover:text-blue-400 transition-colors py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
       </nav>
-    </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        This is a sample personal website built with GitHub Pages. Customize it
-        to share your story!
-      </p>
-    </section>
+      <!-- Hero Section -->
+      <header class="pt-20 pb-16 md:pt-32 md:pb-24 text-center">
+        <div class="container mx-auto px-4">
+          <h1
+            class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6"
+          >
+            BHASKAR S
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8">ML Engineer</p>
+          <div class="flex justify-center space-x-4 mb-8">
+            <a
+              href="https://linkedin.com/in/bhaskar0210s"
+              target="_blank"
+              class="text-gray-300 hover:text-blue-400 transition-colors"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="https://github.com/bhaskar0210s"
+              target="_blank"
+              class="text-gray-300 hover:text-blue-400 transition-colors"
+            >
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a
+              href="mailto:bhaskar0210s@gmail.com"
+              class="text-gray-300 hover:text-blue-400 transition-colors"
+            >
+              <i class="fas fa-envelope text-2xl"></i>
+            </a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#projects"
+              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors shadow-lg"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              class="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-full transition-colors shadow-lg"
+            >
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </header>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>List your projects here.</p>
-    </section>
+      <!-- About Section -->
+      <section id="about" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+          <div class="max-w-3xl mx-auto">
+            <p class="text-lg leading-relaxed mb-6">
+              Driven by an enduring passion for uncovering the secrets of the
+              universe, I have spent several years exploring AI with hands-on
+              experience in developing generative AI models, including building
+              GANs for synthetic data generation, Chain-of-thought reasoning GPT
+              model, and conducting experiments with transformer-based NLP
+              models.
+            </p>
+            <p class="text-lg leading-relaxed mb-6">
+              Proficient in Python, PyTorch, TensorFlow, and a range of Python
+              libraries, with strong expertise in designing, training, and
+              evaluating advanced AI models through self-driven projects.
+            </p>
+            <p class="text-lg leading-relaxed">
+              Extensive experience as a Full Stack Developer using modern web
+              technologies to build scalable, robust, and integrable software
+              solutions. Dedicated to bridging the gap between cutting-edge AI
+              research and practical application, continuously enhancing skills
+              to solve complex challenges.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        You can reach me at
-        <a href="mailto:youremail@example.com">youremail@example.com</a>.
-      </p>
-    </section>
+      <!-- Skills Section -->
+      <section id="technical-skills" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-5xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+          >
+            Technical Skills
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- AI & Machine Learning Card -->
+            <div
+              class="bg-slate-900 rounded-xl p-6 shadow-lg transform transition hover:-translate-y-2"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-500 rounded-full"
+                >
+                  <i class="fas fa-robot text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold ml-3 text-white">AI & ML</h3>
+              </div>
+              <ul class="space-y-2 text-gray-300">
+                <li class="flex items-center">
+                  <!-- <i class="fas fa-fire text-blue-400 w-5"></i> -->
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg"
+                    alt="PyTorch"
+                    class="w-5 h-5"
+                  />
+                  <span class="ml-2">PyTorch</span>
+                </li>
+                <li class="flex items-center">
+                  <!-- Using an image for TensorFlow -->
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"
+                    alt="TensorFlow"
+                    class="w-5 h-5"
+                  />
+                  <span class="ml-2">TensorFlow</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-sitemap text-purple-400 w-5"></i>
+                  <span class="ml-2">GANs</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-robot text-purple-400 w-5"></i>
+                  <span class="ml-2">GPTs</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-project-diagram text-purple-400 w-5"></i>
+                  <span class="ml-2">VAEs</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-atom text-purple-400 w-5"></i>
+                  <span class="ml-2">Transformers</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-layer-group text-purple-400 w-5"></i>
+                  <span class="ml-2">CNNs</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-language text-purple-400 w-5"></i>
+                  <span class="ml-2">NLP</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Full Stack Development Card -->
+            <div
+              class="bg-slate-900 rounded-xl p-6 shadow-lg transform transition hover:-translate-y-2"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-cyan-500 rounded-full"
+                >
+                  <i class="fas fa-code text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold ml-3 text-white">Full Stack</h3>
+              </div>
+              <ul class="space-y-2 text-gray-300">
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                    alt="Python"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">Python</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                    alt="JavaScript"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">JavaScript</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
+                    alt="PHP"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">PHP</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                    alt="React"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">React</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+                    alt="Node.js"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">Node.js</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+                    alt="Vue 3"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">Vue 3</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Pinialogo.svg"
+                    alt="Pinia"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">Pinia</span>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                    alt="TailwindCSS"
+                    class="w-5 h-5 object-contain"
+                  />
+                  <span class="ml-2">TailwindCSS</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Tools & Infrastructure Card -->
+            <div
+              class="bg-slate-900 rounded-xl p-6 shadow-lg transform transition hover:-translate-y-2"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-indigo-500 rounded-full"
+                >
+                  <i class="fas fa-tools text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold ml-3 text-white">Tools & Infra</h3>
+              </div>
+              <ul class="space-y-2 text-gray-300">
+                <li class="flex items-center">
+                  <i class="fas fa-database text-indigo-400 w-5"></i>
+                  <span class="ml-2">PostgreSQL</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-server text-indigo-400 w-5"></i>
+                  <span class="ml-2">MySQL</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fab fa-git-alt text-indigo-400 w-5"></i>
+                  <span class="ml-2">Git</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fab fa-docker text-indigo-400 w-5"></i>
+                  <span class="ml-2">Docker</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fab fa-aws text-indigo-400 w-5"></i>
+                  <span class="ml-2">AWS</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-plug text-indigo-400 w-5"></i>
+                  <span class="ml-2">RESTful APIs</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <footer>
-      <p>&copy; 2025 My Personal Website</p>
-    </footer>
+      <!-- Projects Section -->
+      <section id="projects" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4">
+          <h2 class="text-5xl font-bold mb-10 text-center">
+            <span class="relative inline-block">
+              <span
+                class="absolute inset-0 transform translate-x-2 translate-y-2 bg-green-600/20 rounded-lg blur-lg"
+              ></span>
+              <span
+                class="relative bg-gradient-to-r from-green-500 to-teal-600 bg-clip-text text-transparent"
+                >Projects</span
+              >
+            </span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div
+              class="project-card bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden"
+            >
+              <div
+                class="h-48 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center"
+              >
+                <i class="fas fa-robot text-6xl text-white"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3">MicroGPT Reasoning Model</h3>
+                <p class="mb-4 text-gray-300">
+                  Engineered a lightweight transformer module incorporating
+                  chain-of-thought reasoning (inspired by O1) to break down
+                  complex tasks and support multi-step logical reasoning in
+                  natural language.
+                </p>
+                <div class="flex justify-between items-center">
+                  <div class="flex space-x-2">
+                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
+                      >Transformers</span
+                    >
+                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
+                      >NLP</span
+                    >
+                  </div>
+                  <p class="text-sm text-gray-400">🚧 In Development</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+              class="project-card bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden"
+            >
+              <div
+                class="h-48 bg-gradient-to-r from-green-600 to-teal-600 flex items-center justify-center"
+              >
+                <i class="fas fa-square-root-variable text-6xl text-white"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3">Handwritten Math Solver</h3>
+                <p class="mb-4 text-gray-300">
+                  Developed a personal project that converts handwritten
+                  equations into computed results using a custom CNN for
+                  character recognition — utilizing GANs for data augmentation
+                  and VAEs for noise reduction.
+                </p>
+                <div class="flex justify-between items-center">
+                  <div class="flex space-x-2">
+                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
+                      >CNNs</span
+                    >
+                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
+                      >GANs</span
+                    >
+                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
+                      >VAEs</span
+                    >
+                  </div>
+                  <p class="text-sm text-gray-400">🚧 In Development</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- More Projects Coming Soon Card -->
+            <div
+              class="col-span-1 md:col-span-2 bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg p-6 text-center"
+            >
+              <h3 class="text-xl font-bold mb-4">More Projects Coming Soon</h3>
+              <p class="text-gray-300 mb-4">
+                I'm working on adding more of my AI solutions spanning computer
+                vision, generative modeling, and natural language processing
+                projects to this portfolio.
+              </p>
+              <p class="text-blue-400">Check back soon for updates!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-5xl font-bold mb-10 text-center">
+            <span class="relative inline-block">
+              <span
+                class="absolute inset-0 transform translate-x-2 translate-y-2 bg-blue-600/20 rounded-lg blur-lg"
+              ></span>
+              <span
+                class="relative bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent"
+                >Professional Experience</span
+              >
+            </span>
+          </h2>
+
+          <div class="max-w-3xl mx-auto">
+            <div class="relative">
+              <!-- Glow effect background -->
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-lg rounded-xl"
+              ></div>
+
+              <!-- Content container with increased opacity -->
+              <div
+                class="relative bg-slate-800/90 backdrop-blur-md rounded-xl p-8 border border-blue-500/30 shadow-lg"
+              >
+                <div class="relative pl-8 pb-6">
+                  <!-- Timeline line -->
+                  <div
+                    class="absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-blue-400 to-indigo-500"
+                  ></div>
+
+                  <!-- Timeline dot with pulse effect -->
+                  <div class="absolute left-0 top-2 -ml-2">
+                    <div class="w-4 h-4 rounded-full bg-blue-500 relative">
+                      <div
+                        class="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-50"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <!-- Content -->
+                  <div>
+                    <div
+                      class="flex flex-col md:flex-row md:justify-between md:items-center mb-4"
+                    >
+                      <h3 class="text-xl font-bold text-white">
+                        Full Stack Developer
+                      </h3>
+                      <div class="text-blue-300 font-medium">
+                        Jan 2018 - Present
+                      </div>
+                    </div>
+                    <h4 class="text-lg text-blue-100 mb-4">
+                      Shoptree Technologies Pvt Ltd
+                    </h4>
+                    <ul
+                      class="list-disc list-outside ml-5 space-y-3 text-white"
+                    >
+                      <li>
+                        Spearheaded development of the company's primary
+                        platform, contributing to nearly 45% of its codebase and
+                        70% overall.
+                      </li>
+                      <li>
+                        Reduced running costs by approximately 50% by optimising
+                        key database queries and overall system workflows.
+                      </li>
+                      <li>
+                        Designed and implemented scalable system architectures
+                        for management and inventory systems that are both
+                        simplified and seamlessly integrable with other
+                        applications.
+                      </li>
+                      <li>
+                        Developed and maintained critical applications,
+                        significantly enhancing operational efficiency.
+                      </li>
+                      <li>
+                        Collaborated with cross-functional teams to drive
+                        continuous improvement and innovation in the product
+                        suite.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4">
+          <h2 class="text-5xl font-bold mb-10 text-center">
+            <span class="relative inline-block">
+              <span
+                class="absolute inset-0 transform translate-x-2 translate-y-2 bg-blue-600/20 rounded-lg blur-lg"
+              ></span>
+              <span
+                class="relative bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-transparent"
+                >Contact Me</span
+              >
+            </span>
+          </h2>
+
+          <div
+            class="max-w-lg mx-auto bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg p-8"
+          >
+            <p class="text-center mb-8">
+              Feel free to reach out if you have any questions or opportunities.
+            </p>
+
+            <div class="grid grid-cols-1 gap-4 mb-4">
+              <a
+                href="mailto:bhaskar0210s@gmail.com"
+                class="flex items-center space-x-3 p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <i class="fas fa-envelope text-blue-500 text-xl w-8"></i>
+                <span>bhaskar0210s@gmail.com</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/bhaskar0210s"
+                target="_blank"
+                class="flex items-center space-x-3 p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <i class="fab fa-linkedin text-blue-500 text-xl w-8"></i>
+                <span>linkedin.com/in/bhaskar0210s</span>
+              </a>
+              <a
+                href="https://github.com/bhaskar0210s"
+                target="_blank"
+                class="flex items-center space-x-3 p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <i class="fab fa-github text-blue-500 text-xl w-8"></i>
+                <span>github.com/bhaskar0210s</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-slate-900 text-center py-8">
+        <div class="container mx-auto px-4">
+          <p>&copy; 2025 Bhaskar S. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Vue app initialization -->
+    <script src="main.js"></script>
   </body>
 </html>
