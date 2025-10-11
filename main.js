@@ -48,8 +48,97 @@ const app = createApp({
       },
     ]);
 
+    // Simple starry background animation
+    const initStarryBackground = () => {
+      const canvas = document.getElementById("starryCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Set canvas size
+      const resizeCanvas = () => {
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+        ctx.scale(dpr, dpr);
+      };
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      // Simple Star class
+      class Star {
+        constructor() {
+          this.x = Math.random() * window.innerWidth;
+          this.y = Math.random() * window.innerHeight;
+          this.size = Math.random() * 2 + 0.5;
+          this.speed = Math.random() * 0.3 + 0.1;
+          this.opacity = Math.random() * 0.8 + 0.2;
+          this.twinkleSpeed = Math.random() * 0.02 + 0.01;
+          this.twinklePhase = Math.random() * Math.PI * 2;
+          this.baseOpacity = this.opacity;
+        }
+
+        update() {
+          this.twinklePhase += this.twinkleSpeed;
+          this.opacity = this.baseOpacity + Math.sin(this.twinklePhase) * 0.3;
+
+          // Move stars slowly
+          this.y += this.speed;
+          if (this.y > window.innerHeight) {
+            this.y = 0;
+            this.x = Math.random() * window.innerWidth;
+          }
+        }
+
+        draw() {
+          ctx.globalAlpha = this.opacity;
+          ctx.fillStyle = "#ffffff";
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // Initialize stars
+      const stars = [];
+      const numStars = Math.min(
+        Math.floor((window.innerWidth * window.innerHeight) / 15000),
+        25
+      );
+
+      for (let i = 0; i < numStars; i++) {
+        stars.push(new Star());
+      }
+
+      let lastTime = 0;
+      const targetFPS = 30;
+      const frameInterval = 1000 / targetFPS;
+
+      // Animation loop
+      const animate = (currentTime) => {
+        if (currentTime - lastTime >= frameInterval) {
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+          stars.forEach((star) => {
+            star.update();
+            star.draw();
+          });
+
+          lastTime = currentTime;
+        }
+
+        requestAnimationFrame(animate);
+      };
+
+      animate(0);
+    };
+
     // Handle scroll events for animations
     onMounted(() => {
+      // Initialize starry background
+      initStarryBackground();
+
       // Add intersection observer for scroll animations
       const observer = new IntersectionObserver(
         (entries) => {
