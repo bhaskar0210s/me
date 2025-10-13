@@ -25,25 +25,20 @@
       ></canvas>
 
       <!-- Navigation -->
-      <nav class="sticky top-0 bg-slate-800/80 backdrop-blur-md z-50 shadow-lg">
+      <nav class="sticky top-0 bg-slate-900/80 backdrop-blur-sm z-50 shadow-lg">
         <div
-          class="container mx-auto px-4 py-3 flex justify-between items-center"
+          class="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl"
         >
-          <a
-            href="#"
-            class="flex items-center justify-center w-10 h-10 bg-blue-500/20 rounded-full group text-blue-400 transition-all duration-300 hover:bg-blue-500/40 hover:scale-110"
+          <!-- Rapidly updating note positioned at top left -->
+          <span
+            class="text-xs text-blue-400 opacity-80 font-light italic"
+            style="letter-spacing: 0.3px"
           >
-            <div class="relative flex items-center justify-center">
-              <div
-                class="absolute w-8 h-8 border-2 border-blue-400/50 rounded-full animate-ping opacity-30"
-              ></div>
-              <div
-                class="absolute w-8 h-8 border border-blue-400/70 rounded-full animate-pulse"
-              ></div>
-              <i class="fas fa-microchip text-xl group-hover:text-blue-300"></i>
-            </div>
-          </a>
-          <div class="hidden md:flex space-x-8">
+            🚀 Rapidly updating
+          </span>
+
+          <!-- Blog link positioned at top right -->
+          <div class="hidden md:flex">
             <a
               href="https://bhaskar0210s.github.io/blog/"
               target="_blank"
@@ -51,6 +46,8 @@
               >My Blog</a
             >
           </div>
+
+          <!-- Mobile menu button -->
           <button
             @click="toggleMobileMenu"
             class="md:hidden text-white focus:outline-none"
@@ -59,8 +56,10 @@
           </button>
         </div>
         <!-- Mobile menu -->
-        <div v-show="mobileMenuOpen" class="md:hidden bg-slate-800 shadow-lg">
-          <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <div v-show="mobileMenuOpen" class="md:hidden shadow-lg">
+          <div
+            class="container mx-auto px-4 py-2 flex flex-col space-y-3 max-w-6xl"
+          >
             <a
               href="https://bhaskar0210s.github.io/blog/"
               target="_blank"
@@ -656,6 +655,16 @@
           <p>&copy; 2025 Bhaskar S. All rights reserved.</p>
         </div>
       </footer>
+
+      <!-- Scroll to Top Button -->
+      <button
+        v-show="showScrollToTop"
+        @click="scrollToTop"
+        class="fixed top-20 right-4 z-40 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none"
+        :class="{ 'opacity-100 pointer-events-auto': showScrollToTop }"
+      >
+        <i class="fas fa-arrow-up text-lg"></i>
+      </button>
     </div>
 
     <!-- Vue app initialization -->
