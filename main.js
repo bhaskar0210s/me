@@ -6,6 +6,9 @@ const app = createApp({
     // Mobile menu state
     const mobileMenuOpen = ref(false);
 
+    // Scroll to top button state
+    const showScrollToTop = ref(false);
+
     // Toggle mobile menu
     const toggleMobileMenu = () => {
       mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -14,6 +17,14 @@ const app = createApp({
     // Close mobile menu
     const closeMobileMenu = () => {
       mobileMenuOpen.value = false;
+    };
+
+    // Scroll to top function
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     };
 
     // Download resume function
@@ -163,7 +174,7 @@ const app = createApp({
         observer.observe(section);
       });
 
-      // Add scroll event for navbar
+      // Add scroll event for navbar and scroll to top button
       window.addEventListener("scroll", () => {
         const nav = document.querySelector("nav");
         if (window.scrollY > 50) {
@@ -171,6 +182,9 @@ const app = createApp({
         } else {
           nav.classList.remove("shadow-lg");
         }
+
+        // Show/hide scroll to top button
+        showScrollToTop.value = window.scrollY > 300;
       });
 
       // Close mobile menu when clicking outside
@@ -187,6 +201,8 @@ const app = createApp({
       closeMobileMenu,
       projects,
       downloadResume,
+      showScrollToTop,
+      scrollToTop,
     };
   },
 });
