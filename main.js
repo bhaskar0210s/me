@@ -33,6 +33,7 @@ const app = createApp({
       // This would typically trigger a download of your resume file
     };
 
+
     // Project data
     const projects = ref([
       {
@@ -67,6 +68,17 @@ const app = createApp({
         tags: ["CNNs", "Web App"],
         status: "",
         link: "https://bhaskar0210s.github.io/Hand-Written-Recognition/",
+      },
+      {
+        id: 4,
+        title: "AirCursor",
+        description:
+          "Building an Apple Vision-style interaction system where users control the mouse through coordinated eye gaze and fingertip pointing.",
+        icon: "fa-hand-pointer",
+        gradient: "from-cyan-600 to-blue-600",
+        tags: ["Computer Vision", "Eye + Hand Tracking"],
+        status: "Under Development",
+        link: "https://github.com/bhaskar0210s/air-cursor",
       },
     ]);
 
@@ -160,6 +172,7 @@ const app = createApp({
     onMounted(() => {
       // Initialize starry background
       initStarryBackground();
+      trackPrivateVisit();
 
       // Add intersection observer for scroll animations
       const observer = new IntersectionObserver(
