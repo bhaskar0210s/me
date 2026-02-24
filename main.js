@@ -43,19 +43,30 @@ const app = createApp({
         icon: "fa-robot",
         gradient: "from-blue-600 to-purple-600",
         tags: ["Transformers", "NLP"],
-        status: "🚧 In Development",
+        status: "",
         link: "#",
       },
       {
         id: 2,
-        title: "Handwritten Math Solver",
+        title: "NotebookLM Clone",
         description:
-          "Developed a personal project that converts handwritten equations into computed results using a custom CNN for character recognition — utilizing GANs for data augmentation and VAEs for noise reduction.",
-        icon: "fa-square-root-variable",
-        gradient: "from-green-600 to-teal-600",
-        tags: ["CNNs", "GANs", "VAEs"],
-        status: "🚧 In Development",
-        link: "#",
+          "Built a NotebookLM-inspired AI workspace that lets users interact with uploaded knowledge sources through contextual chat and summarization workflows.",
+        icon: "fa-book-open",
+        gradient: "from-amber-500 to-orange-600",
+        tags: ["LLMs", "RAG", "Full Stack"],
+        status: "",
+        link: "https://github.com/bhaskar0210s/notebooklm-clone",
+      },
+      {
+        id: 3,
+        title: "Hand Written Recognition",
+        description:
+          "Interactive web application that recognizes handwritten digits (0-9) using machine learning models. Draw digits on the canvas and get real-time predictions with confidence scores.",
+        icon: "fa-pen-fancy",
+        gradient: "from-purple-600 to-pink-600",
+        tags: ["CNNs", "Web App"],
+        status: "",
+        link: "https://bhaskar0210s.github.io/Hand-Written-Recognition/",
       },
     ]);
 
