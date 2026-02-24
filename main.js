@@ -33,6 +33,33 @@ const app = createApp({
       // This would typically trigger a download of your resume file
     };
 
+    // Private visit logging (set your own webhook URL)
+    const trackPrivateVisit = async () => {
+      const visitLogEndpoint =
+        "https://script.google.com/macros/s/AKfycbztjcwten-b9S_rSEZkh3XVMMO07gAoT6DslyubeVuXSoFv5MQyxXhBHTFYc_VGc4-W/exec";
+      if (!visitLogEndpoint) {
+        return;
+      }
+
+      try {
+        await fetch(visitLogEndpoint, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify({
+            visitedAt: new Date().toISOString(),
+            websiteUrl: window.location.href,
+            userAgent: navigator.userAgent,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          }),
+          keepalive: true,
+        });
+      } catch (error) {
+        console.error("Unable to log visit:", error);
+      }
+    };
 
     // Project data
     const projects = ref([
