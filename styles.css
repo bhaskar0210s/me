@@ -1,268 +1,297 @@
-/* Basic styling for a personal website */
+/* Bhaskar S — one-page résumé. No animations or transitions: everything reacts instantly. */
+
+:root {
+  --bg: #ffffff;
+  --text: #1d1d1f;
+  --muted: #5f5f66;
+  --faint: #8e8e93;
+  --line: #e6e6eb;
+  --accent: #0b57d0;
+  --chip: #f2f2f5;
+  --serif: "Newsreader", "Iowan Old Style", Palatino, Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111113;
+    --text: #f5f5f7;
+    --muted: #a8a8ad;
+    --faint: #8e8e93;
+    --line: #2c2c30;
+    --accent: #8ab4f8;
+    --chip: #1d1d21;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
   margin: 0;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 80px 32px 56px;
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.6);
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Header */
+
+.name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 0;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
-  border-radius: 4px;
+.role { font-size: 19px; margin: 14px 0 2px; }
+.role span { white-space: nowrap; }
+@media (max-width: 680px) { .role .sep { display: none; } .role span:last-child { display: block; color: var(--muted); } }
+.meta { margin: 0; color: var(--muted); }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+  margin-top: 22px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.8);
+.button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+.button:hover { background: var(--chip); text-decoration: none; }
+
+.intro {
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 40px 0 0;
+  max-width: 70ch;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+/* At a glance */
+
+.glance {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 40px 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-header nav ul {
-  list-style: none;
-  padding: 0;
+.glance div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 18px 16px 18px 0;
 }
+.glance div + div { padding-left: 18px; border-left: 1px solid var(--line); }
 
-header nav ul li {
-  display: inline;
-  margin: 0 1rem;
+.glance dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 32px;
+  line-height: 1.1;
 }
+.glance dt { margin-top: 6px; color: var(--muted); font-size: 13.5px; line-height: 1.35; }
 
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
+/* Sections */
 
 section {
-  padding: 2rem;
-  background: #fff;
-  margin: 1rem auto;
-  max-width: 800px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 0 32px;
+  padding-top: 44px;
 }
 
-/* Animation for project cards */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+section > h2 {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1),
-    0 10px 10px -5px rgba(147, 197, 253, 0.05);
+.body { min-width: 0; }
+
+h3 { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4; }
+h4 { margin: 0; font-size: 15.5px; font-weight: 600; }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+.row.sub { margin-top: 24px; }
+
+.when {
+  color: var(--muted);
+  font-size: 14.5px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Optimized starry background canvas styling */
-#starryCanvas {
-  opacity: 0.9;
-  pointer-events: none;
-  background: #0f0f23;
+.title { margin: 2px 0 0; font-weight: 500; }
+.desc { margin: 6px 0 0; color: var(--muted); }
+
+ul { margin: 10px 0 0; padding-left: 18px; }
+li { margin: 6px 0; }
+li::marker { color: var(--faint); }
+
+/* Project and education lists */
+
+.lede { margin: 0 0 8px; color: var(--muted); }
+
+.items { list-style: none; padding: 0; margin: 0; }
+.items li { margin: 0; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.items li:first-child { padding-top: 2px; }
+.items li:last-child { border-bottom: 0; padding-bottom: 0; }
+.items p { margin: 3px 0 0; color: var(--muted); }
+
+.item-name { font-weight: 600; color: var(--text); }
+a.item-name:hover { color: var(--accent); }
+
+.tag {
+  flex: none;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  background: var(--chip);
+  border-radius: 6px;
+  padding: 1px 8px;
 }
 
-/* Mobile menu animation */
-.mobile-menu-enter-active,
-.mobile-menu-leave-active {
-  transition: opacity 0.3s, transform 0.3s;
-}
+/* Label / value pairs */
 
-.mobile-menu-enter-from,
-.mobile-menu-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-/* Section transition animation */
-.section-fade-enter-active,
-.section-fade-leave-active {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.section-fade-enter-from,
-.section-fade-leave-to {
-  opacity: 0;
-  transform: translateY(20px);
-}
+.pairs { margin: 0; }
+.pairs div { display: grid; grid-template-columns: 150px 1fr; gap: 0 16px; padding: 3px 0; }
+.pairs div + div { margin-top: 6px; }
+.pairs dt { font-weight: 500; }
+.pairs dd { margin: 0; color: var(--muted); }
 
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: #fff;
+  margin-top: 64px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 13.5px;
 }
 
-/* Skill cards styling for premium look */
-.skill-card {
-  min-height: 320px;
-  transform: perspective(1000px) rotateY(0deg);
-  transition: all 0.5s ease;
+.print-only { display: none; }
+
+/* Phones */
+
+@media (max-width: 680px) {
+  .page { padding: 44px 16px 40px; }
+  .name { font-size: 42px; }
+  .role { font-size: 17px; }
+  .intro { font-size: 16.5px; margin-top: 28px; }
+
+  .glance { grid-template-columns: 1fr 1fr; margin-top: 32px; }
+  .glance div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .glance div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .glance dd { font-size: 28px; }
+
+  section { grid-template-columns: 1fr; padding-top: 36px; }
+  section > h2 { margin: 0 0 12px; }
+
+  .row { flex-wrap: wrap; gap: 2px 12px; }
+  .pairs div { grid-template-columns: 1fr; }
+  .pairs div + div { margin-top: 10px; }
 }
 
-.skill-card:hover {
-  transform: perspective(1000px) rotateY(5deg) translateY(-10px);
-  box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
-}
+/* Print: the A4 résumé PDF is made from this same page */
 
-/* Skill tags with icons */
-.skill-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  background-color: rgba(37, 99, 235, 0.15);
-  color: rgba(219, 234, 254, 1);
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-  background-color: rgba(37, 99, 235, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
-}
-
-/* Home icon pulse effect */
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
+@media print {
+  :root {
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #4a4a50;
+    --faint: #8a8a8f;
+    --line: #dcdce0;
+    --accent: #111111;
+    --chip: #f0f0f2;
   }
-  50% {
-    opacity: 0.7;
+
+  @page { size: A4; margin: 12mm 14mm; }
+
+  /* Plain glyphs only, so the PDF's text layer (what résumé scanners read) keeps every character:
+     Inter's contextual and tabular alternates have no Unicode mapping in the printed PDF. */
+  * {
+    font-feature-settings: "calt" 0, "tnum" 0, "case" 0 !important;
+    font-variant-numeric: normal !important;
+    font-variant-ligatures: no-contextual !important;
   }
-}
 
-.fa-home {
-  animation: pulse 3s ease-in-out infinite;
-}
+  body { font-size: 9.2pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-/* HUD-style skill tags */
-.hud-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  background-color: rgba(37, 99, 235, 0.15);
-  color: rgba(219, 234, 254, 1);
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
-}
+  /* Block layout (not grid) so WebKit can keep each entry whole across the page break. */
+  /* Floated labels keep the PDF reading order: section name first, then its content. */
+  section { display: block; padding: 12pt 0 0 102pt; }
+  section::after { content: ""; display: block; clear: both; }
+  section > h2 { float: left; width: 88pt; margin: 1.5pt 0 0 -102pt; }
+  #open-source { break-before: page; page-break-before: always; padding-top: 0; }
+  .items li, .job li, .pairs div, .row { break-inside: avoid; page-break-inside: avoid; }
+  .row { break-after: avoid; page-break-after: avoid; }
+  .page { max-width: none; padding: 0; }
 
-.hud-tag:hover {
-  background-color: rgba(37, 99, 235, 0.25);
-  transform: translateY(-2px);
-}
+  .screen-only, .links, footer { display: none !important; }
+  .print-only { display: block; }
 
-.hud-tag-purple {
-  background-color: rgba(147, 51, 234, 0.15);
-  border-color: rgba(147, 51, 234, 0.2);
-}
+  .name { font-size: 25pt; }
+  .role { font-size: 11pt; margin: 4pt 0 0; }
+  .contact { margin: 2pt 0 0; color: var(--muted); font-size: 8.8pt; }
 
-.hud-tag-purple:hover {
-  background-color: rgba(147, 51, 234, 0.25);
-}
+  .intro { font-size: 9.8pt; line-height: 1.5; margin-top: 10pt; max-width: none; }
 
-.hud-tag-cyan {
-  background-color: rgba(6, 182, 212, 0.15);
-  border-color: rgba(6, 182, 212, 0.2);
-}
+  .glance { margin-top: 10pt; }
+  .glance div { padding: 5pt 10pt 5pt 0; }
+  .glance div + div { padding-left: 10pt; }
+  .glance dd { font-size: 15pt; }
+  .glance dt { font-size: 8pt; margin-top: 1pt; }
 
-.hud-tag-cyan:hover {
-  background-color: rgba(6, 182, 212, 0.25);
-}
+  section > h2 { font-size: 7.6pt; }
 
-.hud-tag-blue {
-  background-color: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.2);
-}
+  h3 { font-size: 10pt; }
+  h4 { font-size: 9.6pt; }
+  .row { gap: 10pt; }
+  .row.sub { margin-top: 7pt; }
+  .when { font-size: 8.8pt; }
+  .title { margin-top: 0; }
+  .desc { margin-top: 2pt; }
 
-.hud-tag-blue:hover {
-  background-color: rgba(59, 130, 246, 0.25);
-}
+  ul { margin-top: 3pt; padding-left: 11pt; }
+  li { margin: 1.6pt 0; }
 
-/* Skill bars animation */
-.skill-bar-pytorch {
-  width: 92%;
-  animation: growBar 1.5s ease-out forwards;
-}
+  .lede { margin-bottom: 3pt; }
+  .items li { padding: 3.2pt 0; break-inside: avoid; }
+  .items li:first-child { padding-top: 0; }
+  .items p { margin-top: 0.5pt; }
+  .tag { font-size: 7.4pt; padding: 0 5pt; }
+  a.item-name[data-url]::after { content: "   " attr(data-url); font-weight: 400; color: var(--muted); font-size: 8.2pt; }
 
-.skill-bar-tensorflow {
-  width: 87%;
-  animation: growBar 1.5s ease-out forwards;
-}
+  .pairs div { display: block; position: relative; padding: 0 0 0 82pt; }
+  .pairs dt { position: absolute; left: 0; top: 0; }
+  .pairs div + div { margin-top: 2pt; }
 
-.skill-bar-transformers {
-  width: 90%;
-  animation: growBar 1.5s ease-out forwards;
-}
-
-.skill-bar-gans {
-  width: 85%;
-  animation: growBar 1.5s ease-out forwards;
-}
-
-@keyframes growBar {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: inherit;
-  }
-}
-
-/* Circuit border animation */
-@keyframes borderPulse {
-  0%,
-  100% {
-    border-color: rgba(6, 182, 212, 0.3);
-  }
-  50% {
-    border-color: rgba(6, 182, 212, 0.6);
-  }
-}
-
-/* Floating icon animation for skill panels */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.floating-icon {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Skill panel hover effects */
-.skill-panel {
-  transition: all 0.3s ease;
-}
-
-.skill-panel:hover {
-  transform: translateY(-5px);
+  a { color: inherit; }
 }

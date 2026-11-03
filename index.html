@@ -1,721 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bhaskar S | ML Engineer</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Vue.js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="bg-black text-gray-200 min-h-screen">
-    <div id="app" class="relative">
-      <!-- Starry background canvas -->
-      <canvas
-        id="starryCanvas"
-        class="fixed top-0 left-0 w-full h-full -z-10"
-      ></canvas>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bhaskar S</title>
+<meta name="description" content="Senior full stack developer in Bengaluru. Nearly nine years building Shoptree's point-of-sale platform, machine learning in production since 2021, and open-source Mac apps. Working toward AI safety research.">
+<link rel="canonical" href="https://bhaskar0210s.github.io/me/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Bhaskar S">
+<meta property="og:description" content="Senior full stack developer in Bengaluru, working toward AI safety research.">
+<meta property="og:url" content="https://bhaskar0210s.github.io/me/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1f'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23ffffff'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
 
-      <!-- Navigation -->
-      <nav class="sticky top-0 bg-slate-900/80 backdrop-blur-sm z-50 shadow-lg">
-        <div
-          class="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl"
-        >
-          <!-- Rapidly updating note positioned at top left -->
-          <span
-            class="text-xs text-blue-400 opacity-80 font-light italic"
-            style="letter-spacing: 0.3px"
-          >
-            🚀 Rapidly updating
-          </span>
+  <header class="top">
+    <h1 class="name">Bhaskar S</h1>
+    <p class="role"><span>Senior Full Stack Developer</span><span class="sep"> · </span><span>Machine learning in production</span></p>
+    <p class="meta screen-only">Bengaluru, India</p>
+    <p class="contact print-only">Bengaluru, India · bhaskar0210s@gmail.com · bhaskar0210s.github.io/me · github.com/bhaskar0210s · linkedin.com/in/bhaskar0210s</p>
+    <nav class="links" aria-label="Contact and profiles">
+      <a href="mailto:bhaskar0210s@gmail.com">bhaskar0210s@gmail.com</a>
+      <a href="https://github.com/bhaskar0210s">GitHub</a>
+      <a href="https://www.linkedin.com/in/bhaskar0210s/">LinkedIn</a>
+      <a href="https://bhaskar0210s.github.io/blog/">Blog</a>
+      <a class="button" href="resume.pdf">Résumé (PDF)</a>
+    </nav>
+  </header>
 
-          <!-- Blog link positioned at top right -->
-          <div class="hidden md:flex">
-            <a
-              href="https://bhaskar0210s.github.io/blog/"
-              target="_blank"
-              class="hover:text-blue-400 transition-colors"
-              >My Blog</a
-            >
-          </div>
+  <p class="intro">I've spent nearly nine years building Shoptree, a cloud point-of-sale, inventory and ordering platform for restaurants and retailers. I'm the lead contributor to its core platform, I built most of its ordering apps, and I've shipped machine learning to production since 2021. I also build fast on my own: six native open-source Mac apps in October 2026, made with Claude Code. Next, I want to work full-time on AI safety research.</p>
 
-          <!-- Mobile menu button -->
-          <button
-            @click="toggleMobileMenu"
-            class="md:hidden text-white focus:outline-none"
-          >
-            <i class="fas fa-bars text-xl"></i>
-          </button>
+  <dl class="glance">
+    <div><dt>building Shoptree</dt><dd>~9 years</dd></div>
+    <div><dt>of platform commits since 2022</dt><dd>4 in 5</dd></div>
+    <div><dt>open-source Mac apps, Oct 2026</dt><dd>6</dd></div>
+    <div><dt>Karnataka CET state rank</dt><dd>671</dd></div>
+  </dl>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="body">
+      <article class="job">
+        <div class="row">
+          <h3>Shoptree Technologies Pvt Ltd</h3>
+          <span class="when">Jan 2018 – present</span>
         </div>
-        <!-- Mobile menu -->
-        <div v-show="mobileMenuOpen" class="md:hidden shadow-lg">
-          <div
-            class="container mx-auto px-4 py-2 flex flex-col space-y-3 max-w-6xl"
-          >
-            <a
-              href="https://bhaskar0210s.github.io/blog/"
-              target="_blank"
-              @click="closeMobileMenu"
-              class="hover:text-blue-400 transition-colors py-2"
-              >My Blog</a
-            >
-          </div>
+        <p class="title">Senior Full Stack Developer · Bengaluru</p>
+        <p class="desc">Cloud point-of-sale, inventory and ordering platform for restaurants and retailers. Laravel (PHP), Vue 3, MySQL, Redis, AWS and Docker.</p>
+        <ul>
+          <li>Lead contributor to the core platform: about 4 in 5 commits since 2022 (2,075 of 2,690), and 80% in 2026.</li>
+          <li>Built the customer and staff apps almost single-handedly: online ordering, table ordering, the waiter app and the kitchen management system (Vue 3).</li>
+          <li>Cut running costs by about half by optimising key database queries and system workflows.</li>
+          <li>Designed the inventory and management systems to scale and to plug cleanly into other applications.</li>
+        </ul>
+        <div class="row sub">
+          <h4>Machine learning in production</h4>
+          <span class="when">Dec 2021 – present</span>
         </div>
-      </nav>
-
-      <!-- Hero Section -->
-      <header
-        class="relative pt-20 pb-16 md:pt-32 md:pb-24 text-center bg-transparent"
-      >
-        <div class="container mx-auto px-4">
-          <h1
-            class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6"
-          >
-            BHASKAR S
-          </h1>
-          <p class="text-xl md:text-2xl text-gray-300 mb-8">ML Engineer</p>
-          <div class="flex justify-center space-x-4 mb-8">
-            <a
-              href="https://linkedin.com/in/bhaskar0210s"
-              target="_blank"
-              class="text-gray-300 hover:text-blue-400 transition-colors"
-            >
-              <i class="fab fa-linkedin text-2xl"></i>
-            </a>
-            <a
-              href="https://github.com/bhaskar0210s"
-              target="_blank"
-              class="text-gray-300 hover:text-blue-400 transition-colors"
-            >
-              <i class="fab fa-github text-2xl"></i>
-            </a>
-            <a
-              href="mailto:bhaskar0210s@gmail.com"
-              class="text-gray-300 hover:text-blue-400 transition-colors"
-            >
-              <i class="fas fa-envelope text-2xl"></i>
-            </a>
-          </div>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="#projects"
-              class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors shadow-lg"
-            >
-              View Projects
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <!-- About Section -->
-      <section id="about" class="py-16 bg-slate-800">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
-          <div class="max-w-3xl mx-auto">
-            <p class="text-lg leading-relaxed mb-6">
-              Driven by an enduring passion for uncovering the secrets of the
-              universe, I have spent several years exploring AI with hands-on
-              experience in developing generative AI models, including building
-              GANs for synthetic data generation, Chain-of-thought reasoning GPT
-              model, and conducting experiments with transformer-based NLP
-              models.
-            </p>
-            <p class="text-lg leading-relaxed mb-6">
-              Proficient in Python, PyTorch, TensorFlow, and a range of Python
-              libraries, with strong expertise in designing, training, and
-              evaluating advanced AI models through self-driven projects.
-            </p>
-            <p class="text-lg leading-relaxed">
-              Extensive experience as a Full Stack Developer and ML Engineer
-              using modern web technologies to build scalable, robust, and
-              integrable software solutions. Dedicated to bridging the gap
-              between cutting-edge AI research and practical application,
-              continuously enhancing skills to solve complex challenges.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="technical-skills" class="py-16 bg-slate-800">
-        <div class="container mx-auto px-4">
-          <h2
-            class="text-5xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
-          >
-            Technical Skills
-          </h2>
-          <!-- Rapid Learner Emphasis -->
-          <div class="max-w-4xl mx-auto mb-12">
-            <div
-              class="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-6 border border-blue-500/30"
-            >
-              <div class="text-center">
-                <i
-                  class="fas fa-lightning-bolt text-yellow-400 text-3xl mb-4"
-                ></i>
-                <p class="text-xl font-semibold text-white mb-2">
-                  Rapid Learner
-                </p>
-                <p class="text-gray-300 text-lg">
-                  I want to emphasize that I'm a rapid learner, not bound by any
-                  skill. My passion for continuous learning allows me to quickly
-                  adapt to new technologies and challenges, making me a
-                  versatile problem-solver in any domain.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- AI & Machine Learning Card -->
-            <div
-              class="bg-slate-900 rounded-xl p-6 shadow-lg transform transition hover:-translate-y-2"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 flex items-center justify-center bg-blue-500 rounded-full"
-                >
-                  <i class="fas fa-robot text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold ml-3 text-white">AI & ML</h3>
-              </div>
-              <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg"
-                    alt="PyTorch"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">PyTorch</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"
-                    alt="TensorFlow"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">TensorFlow</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-sitemap text-purple-400 w-5"></i>
-                  <span class="ml-2">GANs</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-robot text-purple-400 w-5"></i>
-                  <span class="ml-2">GPTs</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-project-diagram text-purple-400 w-5"></i>
-                  <span class="ml-2">VAEs</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-atom text-purple-400 w-5"></i>
-                  <span class="ml-2">Transformers</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-layer-group text-purple-400 w-5"></i>
-                  <span class="ml-2">CNNs</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-language text-purple-400 w-5"></i>
-                  <span class="ml-2">NLP</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-link text-purple-400 w-5"></i>
-                  <span class="ml-2">LangChain</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-project-diagram text-purple-400 w-5"></i>
-                  <span class="ml-2">LangGraph</span>
-                </li>
-              </ul>
-            </div>
-            <!-- Full Stack Development Card -->
-            <div
-              class="bg-slate-900 rounded-xl p-6 shadow-lg transform transition hover:-translate-y-2"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 flex items-center justify-center bg-cyan-500 rounded-full"
-                >
-                  <i class="fas fa-code text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold ml-3 text-white">Full Stack</h3>
-              </div>
-              <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-                    alt="Python"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Python</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-                    alt="JavaScript"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">JavaScript</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
-                    alt="PHP"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">PHP</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                    alt="React"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">React</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
-                    alt="Node.js"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Node.js</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
-                    alt="Express.js"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Express.js</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
-                    alt="Vue 3"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Vue 3</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Pinialogo.svg"
-                    alt="Pinia"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Pinia</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
-                    alt="TailwindCSS"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">TailwindCSS</span>
-                </li>
-              </ul>
-            </div>
-            <!-- Tools & Infrastructure Card -->
-            <div
-              class="bg-slate-900 rounded-xl p-6 shadow-lg transform transition hover:-translate-y-2"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-10 h-10 flex items-center justify-center bg-indigo-500 rounded-full"
-                >
-                  <i class="fas fa-tools text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold ml-3 text-white">Tools & Infra</h3>
-              </div>
-              <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
-                    alt="PostgreSQL"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">PostgreSQL</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
-                    alt="MySQL"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">MySQL</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg"
-                    alt="Git"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Git</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg"
-                    alt="Docker"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">Docker</span>
-                </li>
-                <li class="flex items-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                    alt="AWS"
-                    class="w-5 h-5 object-contain"
-                  />
-                  <span class="ml-2">AWS</span>
-                </li>
-                <li class="flex items-center">
-                  <i class="fas fa-plug text-indigo-400 w-5"></i>
-                  <span class="ml-2">RESTful APIs</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="py-16 bg-slate-800">
-        <div class="container mx-auto px-4">
-          <h2 class="text-5xl font-bold mb-10 text-center">
-            <span class="relative inline-block">
-              <span
-                class="absolute inset-0 transform translate-x-2 translate-y-2 bg-green-600/20 rounded-lg blur-lg"
-              ></span>
-              <span
-                class="relative bg-gradient-to-r from-green-500 to-teal-600 bg-clip-text text-transparent"
-                >Projects</span
-              >
-            </span>
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <div
-              class="project-card bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden"
-            >
-              <div
-                class="h-48 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center"
-              >
-                <i class="fas fa-robot text-6xl text-white"></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-3">MicroGPT Reasoning Model</h3>
-                <p class="mb-4 text-gray-300">
-                  Engineered a lightweight transformer module incorporating
-                  chain-of-thought reasoning (inspired by O1) to break down
-                  complex tasks and support multi-step logical reasoning in
-                  natural language.
-                </p>
-                <div class="flex space-x-2">
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >Transformers</span
-                  >
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >NLP</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div
-              class="project-card bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden cursor-pointer"
-              onclick="window.open('https://github.com/bhaskar0210s/notebooklm-clone', '_blank')"
-            >
-              <div
-                class="h-48 bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center"
-              >
-                <i class="fas fa-book-open text-6xl text-white"></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-3">NotebookLM Clone</h3>
-                <p class="mb-4 text-gray-300">
-                  Built a NotebookLM-inspired AI workspace that lets users
-                  interact with uploaded knowledge sources through contextual
-                  chat and summarization workflows.
-                </p>
-                <div class="flex space-x-2">
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >LLMs</span
-                  >
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >RAG</span
-                  >
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >Full Stack</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div
-              class="project-card bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden cursor-pointer"
-              onclick="window.open('https://bhaskar0210s.github.io/Hand-Written-Recognition/', '_blank')"
-            >
-              <div
-                class="h-48 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center"
-              >
-                <i class="fas fa-pen-fancy text-6xl text-white"></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-3">Hand Written Recognition</h3>
-                <p class="mb-4 text-gray-300">
-                  Interactive web application that recognizes handwritten digits
-                  (0-9) using machine learning models. Draw digits on the canvas
-                  and get real-time predictions with confidence scores.
-                </p>
-                <div class="flex justify-between items-center">
-                  <div class="flex space-x-2">
-                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs">
-                      CNNs
-                    </span>
-                    <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                      >Web App</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div
-              class="project-card bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden cursor-pointer"
-              onclick="window.open('https://github.com/bhaskar0210s/air-cursor', '_blank')"
-            >
-              <div
-                class="h-48 bg-gradient-to-r from-cyan-600 to-blue-600 flex items-center justify-center"
-              >
-                <i class="fas fa-hand-pointer text-6xl text-white"></i>
-              </div>
-              <div class="p-6">
-                <div class="flex justify-between items-center mb-3">
-                  <h3 class="text-xl font-bold">AirCursor</h3>
-                  <span
-                    class="px-2 py-1 bg-amber-900/60 text-amber-300 rounded text-xs"
-                    >Under Development</span
-                  >
-                </div>
-                <p class="mb-4 text-gray-300">
-                  Building an Apple Vision-style interaction system where users
-                  control the mouse through coordinated eye gaze and fingertip
-                  pointing.
-                </p>
-                <div class="flex space-x-2">
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >Computer Vision</span
-                  >
-                  <span class="px-2 py-1 bg-blue-900/50 rounded text-xs"
-                    >Eye + Hand Tracking</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- More Projects Coming Soon Card -->
-            <div
-              class="col-span-1 md:col-span-2 bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg p-6 text-center"
-            >
-              <h3 class="text-xl font-bold mb-4">More Projects Coming Soon</h3>
-              <p class="text-gray-300 mb-4">
-                I'm working on adding more of my AI solutions spanning computer
-                vision, generative modeling, and natural language processing
-                projects to this portfolio.
-              </p>
-              <p class="text-blue-400">Check back soon for updates!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience" class="py-16 bg-slate-800">
-        <div class="container mx-auto px-4">
-          <h2 class="text-5xl font-bold mb-10 text-center">
-            <span class="relative inline-block">
-              <span
-                class="absolute inset-0 transform translate-x-2 translate-y-2 bg-blue-600/20 rounded-lg blur-lg"
-              ></span>
-              <span
-                class="relative bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent"
-                >Professional Experience</span
-              >
-            </span>
-          </h2>
-
-          <div class="max-w-3xl mx-auto">
-            <div class="relative">
-              <!-- Glow effect background -->
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-lg rounded-xl"
-              ></div>
-
-              <!-- Content container with increased opacity -->
-              <div
-                class="relative bg-slate-800/90 backdrop-blur-md rounded-xl p-8 border border-blue-500/30 shadow-lg"
-              >
-                <div class="relative pl-8 pb-6">
-                  <!-- Timeline line -->
-                  <div
-                    class="absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-blue-400 to-indigo-500"
-                  ></div>
-
-                  <!-- Timeline dot with pulse effect -->
-                  <div class="absolute left-0 top-2 -ml-2">
-                    <div class="w-4 h-4 rounded-full bg-blue-500 relative">
-                      <div
-                        class="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-50"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <!-- Content -->
-                  <div>
-                    <div class="space-y-3 mb-4">
-                      <div
-                        class="flex flex-col md:flex-row md:justify-between md:items-center"
-                      >
-                        <h3 class="text-xl font-bold text-white">
-                          ML Engineer
-                        </h3>
-                        <div class="text-blue-300 font-medium">
-                          Dec 2021 - Present
-                        </div>
-                      </div>
-                      <div
-                        class="flex flex-col md:flex-row md:justify-between md:items-center"
-                      >
-                        <h3 class="text-xl font-bold text-white">
-                          Full Stack Developer
-                        </h3>
-                        <div class="text-blue-300 font-medium">
-                          Jan 2018 - Present
-                        </div>
-                      </div>
-                    </div>
-                    <h4 class="text-lg text-blue-100 mb-4">
-                      Shoptree Technologies Pvt Ltd
-                    </h4>
-                    <ul
-                      class="list-disc list-outside ml-5 space-y-3 text-white"
-                    >
-                      <li>
-                        Spearheaded development of the company's primary
-                        platform, contributing to nearly 45% of its codebase and
-                        70% overall.
-                      </li>
-                      <li>
-                        Reduced running costs by approximately 50% by optimising
-                        key database queries and overall system workflows.
-                      </li>
-                      <li>
-                        Designed and implemented scalable system architectures
-                        for management and inventory systems that are both
-                        simplified and seamlessly integrable with other
-                        applications.
-                      </li>
-                      <li>
-                        Developed and maintained critical applications,
-                        significantly enhancing operational efficiency.
-                      </li>
-                      <li>
-                        Collaborated with cross-functional teams to drive
-                        continuous improvement and innovation in the product
-                        suite.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="py-16 bg-slate-800">
-        <div class="container mx-auto px-4">
-          <h2 class="text-5xl font-bold mb-10 text-center">
-            <span class="relative inline-block">
-              <span
-                class="absolute inset-0 transform translate-x-2 translate-y-2 bg-blue-600/20 rounded-lg blur-lg"
-              ></span>
-              <span
-                class="relative bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-transparent"
-                >Contact Me</span
-              >
-            </span>
-          </h2>
-
-          <div
-            class="max-w-lg mx-auto bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-lg p-8"
-          >
-            <p class="text-center mb-8">
-              Feel free to reach out if you have any questions or opportunities.
-            </p>
-
-            <div class="grid grid-cols-1 gap-4 mb-4">
-              <a
-                href="mailto:bhaskar0210s@gmail.com"
-                class="flex items-center space-x-3 p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
-              >
-                <i class="fas fa-envelope text-blue-500 text-xl w-8"></i>
-                <span>bhaskar0210s@gmail.com</span>
-              </a>
-              <a
-                href="https://linkedin.com/in/bhaskar0210s"
-                target="_blank"
-                class="flex items-center space-x-3 p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
-              >
-                <i class="fab fa-linkedin text-blue-500 text-xl w-8"></i>
-                <span>linkedin.com/in/bhaskar0210s</span>
-              </a>
-              <a
-                href="https://github.com/bhaskar0210s"
-                target="_blank"
-                class="flex items-center space-x-3 p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
-              >
-                <i class="fab fa-github text-blue-500 text-xl w-8"></i>
-                <span>github.com/bhaskar0210s</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="bg-slate-900 text-center py-8">
-        <div class="container mx-auto px-4">
-          <p>&copy; 2025 Bhaskar S. All rights reserved.</p>
-        </div>
-      </footer>
-
-      <!-- Scroll to Top Button -->
-      <button
-        v-show="showScrollToTop"
-        @click="scrollToTop"
-        class="fixed top-20 right-4 z-40 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none"
-        :class="{ 'opacity-100 pointer-events-auto': showScrollToTop }"
-      >
-        <i class="fas fa-arrow-up text-lg"></i>
-      </button>
+        <ul>
+          <li>Automated inventory with machine learning: demand forecasting and stock-level optimisation in production, with less manual work and fewer over- and under-stock situations.</li>
+          <li>Built a chatbot with OCR that reads documents in real time to automate inventory work.</li>
+          <li>Built churn-prediction models that flag at-risk customers for retention.</li>
+        </ul>
+      </article>
     </div>
+  </section>
 
-    <!-- Vue app initialization -->
-    <script src="main.js"></script>
-  </body>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="body">
+      <ul class="items">
+        <li>
+          <div class="row"><h3>IIT Madras</h3><span class="when">2026 – present</span></div>
+          <p>BS in Data Science and Applications (online degree). Foundation level: statistics, mathematics, Python and English.</p>
+        </li>
+        <li>
+          <div class="row"><h3>BMS College of Engineering, Bengaluru</h3><span class="when">2013 – 2015</span></div>
+          <p>Engineering coursework, four semesters. CGPA 8.5.</p>
+        </li>
+        <li>
+          <div class="row"><h3>National Pre-University College, Jayanagar</h3><span class="when">2011 – 2013</span></div>
+          <p>Physics, chemistry, mathematics and electronics: 95%. Karnataka CET state rank 671.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="body">
+      <dl class="pairs">
+        <div><dt>Software</dt><dd>PHP and Laravel · JavaScript, Vue 3, React and Node.js · Python · MySQL and PostgreSQL · Redis · Docker · AWS</dd></div>
+        <div><dt>Machine learning</dt><dd>PyTorch · TensorFlow · CNNs, transformers, GANs and VAEs · RAG · agents with Google ADK, MCP, LangChain and LangGraph</dd></div>
+        <div><dt>Native apps</dt><dd>C++, Swift and Rust on macOS, built with Claude Code</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section id="open-source">
+    <h2>Open source</h2>
+    <div class="body">
+      <p class="lede">Native Mac apps published in October 2026, made with Claude Code. Small, fast and free.</p>
+      <ul class="items">
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/UsageQ" data-url="github.com/bhaskar0210s/UsageQ">Usage?</a><span class="tag">C++</span></div>
+          <p>Shows Claude Code session and weekly limits, pace and spending in the Mac menu bar.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/mouse" data-url="github.com/bhaskar0210s/mouse">Mouse</a><span class="tag">C++</span></div>
+          <p>Settings for the Logitech MX Master 3S over Logitech's HID++ protocol: 2–3 MB of memory, against about 180 MB for Logi Options+.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/crumb" data-url="github.com/bhaskar0210s/crumb">Crumb</a><span class="tag">Swift</span></div>
+          <p>Clipboard history for the Mac: about 500 KB on disk and 7 MB of memory, with signed releases and a Homebrew tap.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/watcher" data-url="github.com/bhaskar0210s/watcher">Watcher</a><span class="tag">C++</span></div>
+          <p>CPU, memory, GPU and sensors in one menu bar item: 200 KB on disk, about 10 MB of RAM.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/revs" data-url="github.com/bhaskar0210s/revs">Revs</a><span class="tag">Rust</span></div>
+          <p>Line-by-line Git history for the Zed editor, as a 0.77 MB language server.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/marky" data-url="github.com/bhaskar0210s/marky">Marky</a><span class="tag">Swift</span></div>
+          <p>A Markdown reader that typesets LaTeX math natively, without a web view.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://bhaskar0210s.github.io/revise/" data-url="bhaskar0210s.github.io/revise">Revise</a><span class="tag">Web</span></div>
+          <p>Week-by-week revision for seven IIT Madras courses, with interactive statistics and linear-algebra labs. Works offline.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ml">
+    <h2>Machine learning &amp; AI</h2>
+    <div class="body">
+      <ul class="items">
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/restaurant-agent" data-url="github.com/bhaskar0210s/restaurant-agent">Restaurant Squad</a><span class="tag">Agents</span></div>
+          <p>A multi-agent restaurant assistant (reservations, orders, payment) built with Google's Agent Development Kit and MCP.</p>
+        </li>
+        <li>
+          <div class="row"><span class="item-name">MicroGPT reasoning model</span><span class="tag">PyTorch</span></div>
+          <p>A small transformer with chain-of-thought reasoning steps, inspired by OpenAI's o1.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/notebooklm-clone" data-url="github.com/bhaskar0210s/notebooklm-clone">NotebookLM-style workspace</a><span class="tag">RAG</span></div>
+          <p>Chat with and summarise your own documents.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://bhaskar0210s.github.io/Hand-Written-Recognition/" data-url="bhaskar0210s.github.io/Hand-Written-Recognition">Handwritten digit recognition</a><span class="tag">CNN</span></div>
+          <p>A CNN trained in PyTorch that runs in the browser with TensorFlow.js, predicting as you draw.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/air-cursor" data-url="github.com/bhaskar0210s/air-cursor">AirCursor</a><span class="tag">Vision</span></div>
+          <p>Moves the pointer with your fingertip, using Apple Vision hand-pose tracking.</p>
+        </li>
+        <li>
+          <div class="row"><a class="item-name" href="https://github.com/bhaskar0210s/brain-dot-md" data-url="github.com/bhaskar0210s/brain-dot-md">brain-dot-md</a><span class="tag">LLM memory</span></div>
+          <p>A brain-inspired, five-layer memory system for long-running LLM agents.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <section id="more">
+    <h2>Also</h2>
+    <div class="body">
+      <dl class="pairs">
+        <div><dt>Languages</dt><dd>English, Kannada and Telugu; basic Hindi</dd></div>
+        <div><dt>Interests</dt><dd>AI safety, and how minds work: psychology and the brain</dd></div>
+        <div><dt>Volunteering</dt><dd>Helping children learn through local education initiatives</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <footer class="screen-only">Updated November 2026</footer>
+</main>
+
+<script>
+  // Private visit log (the owner's own Google Apps Script). Skipped for local previews.
+  (function () {
+    if (location.protocol === "file:" || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+    try {
+      fetch("https://script.google.com/macros/s/AKfycbztjcwten-b9S_rSEZkh3XVMMO07gAoT6DslyubeVuXSoFv5MQyxXhBHTFYc_VGc4-W/exec", {
+        method: "POST",
+        mode: "no-cors",
+        keepalive: true,
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          visitedAt: new Date().toISOString(),
+          websiteUrl: location.href,
+          userAgent: navigator.userAgent,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        })
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+</body>
 </html>
